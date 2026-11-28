@@ -44,7 +44,8 @@ const subtitleLocales = {
 	Chinese: 'zh-Hans',
 	TraditionalChinese: 'zh-Hant',
 	Japanese: 'ja',
-	Korean: 'ko'
+	Korean: 'ko',
+	Thai: 'th'
 };
 
 const CHARACTER = 'CH0325';
@@ -62,21 +63,22 @@ const AUDIO_DETAIL = [
                 "な、なにかご用件でも！？というか、いつからいらしてたんですか！"
             ],
             English: [
-                "S-Sensei!?",
-                "I-Is there something you need!? Or rather, how long have you been here!?"
+                "S-Sensei!",
+                "Wh-What brings you here?! No, how long have you been there?!"
             ],
             Chinese: [
                 "老、老师！？",
                 "有、有什么事吗！？话说，您什么时候来的！？"
             ],
             TraditionalChinese: [
-                "老、老師！？",
-                "有、有什麼事嗎！？話說，您什麼時候來的！？"
+                "老，老師！？",
+                "有，有什麼事嗎！？話說，您是什麼時候來的！？"
             ],
             Korean: [
-                "S-선생님!?",
-                "내가 뭔가 필요해? 아니면, 얼마나 오랫동안 여기 있었는가?"
-            ]
+                "서, 선생님!!",
+                "여, 여기는 무슨 일로?! 아니, 언제부터 계셨나요!"
+            ],
+            Thai: ["คะ... คุณครู!!","มาทำอะไรที่นี่?! ไม่สิ เข้ามาตั้งแต่เมื่อไรคะ!"]
         }
     },
     {
@@ -86,21 +88,22 @@ const AUDIO_DETAIL = [
                 "でも、相手が先生で良かったです。"
             ],
             English: [
-                "I was so focused on the music, I didn't notice you at all...",
-				"But, I'm glad it was you who showed up, Sensei."
+                "I was so focused on my music that I didn't notice you at all...",
+				"But still, I'm glad it was you, Sensei."
             ],
             Chinese: [
                 "因为刚才一直专注于音乐，完全没注意到您来了……",
                 "不过幸好是老师您。"
             ],
             TraditionalChinese: [
-                "因為剛才一直專注於音樂，完全沒注意到您來了……",
-                "不過幸好是老師您。"
+                "因為專注在音樂上，我完全沒注意到……",
+                "不過，對方是老師真是太好了。"
             ],
             Korean: [
-                "음악에 너무 집중해서 전혀 알아차리지 않았어",
-                "하지만, 당신이 나타났을 때 반가워요, 선생님"
-            ]
+                "음악에 집중하느라, 전혀 눈치채지 못했습니다…….",
+                "그래도, 상대가 선생님이셔서 다행입니다."
+            ],
+            Thai: ["ฉันมัวแต่ฟังเพลง ก็เลยไม่ทันได้สังเกตเลยค่ะ...","แต่พอเป็นคุณครูที่มา ก็โล่งอกไปทีนะคะ"]
         }
     },
     {
@@ -111,9 +114,9 @@ const AUDIO_DETAIL = [
                 "わ、私の趣味というわけでは……！違います！本当に！"
           	],
             English: [
-                "Ah, th-this outfit, it's, um...!",
-                "It's for the Vigilante Corps' undercover investigation, you see...",
-                "It's n-not my hobby or anything...! It's not! Really!"
+                "Ah, th-this outfit is, it's, um...!",
+                "It's an outfit I prepared for the Vigilante Crew's infiltration investigation...",
+                "I-It has nothing to do with my...preferences! Really!"
             ],
             Chinese: [
                 "啊，这、这身衣服是，那个……！",
@@ -121,15 +124,16 @@ const AUDIO_DETAIL = [
                 "绝对不是我的个人爱好……！不是的！真的！"
             ],
             TraditionalChinese: [
-                "啊，這、這身衣服是，那個……！",
-                "是為了配合自衛團的潛入搜查才穿的……！",
-                "絕對不是我的個人愛好……！不是的！真的！"
+                "啊，這，這套衣服是，那個……！",
+                "是為了自衛隊的潛入搜查……",
+                "並，並不是我的興趣……！不是的！真的不是！"
             ],
             Korean: [
-                "이 옷은...",
-                "비지런트 코퍼스의 비밀 수사를 위해서죠",
-                "이건 내 취미가 아니잖아!"
-            ]
+                "앗, 이, 이 옷은, 그게……!",
+                "자경단의 잠입수사를 위해서 준비한 옷, 인데요…….",
+                "제, 제 취미는……! 아닙니다! 정말로요!"
+            ],
+            Thai: ["อ๊ะ ชะ... ชุดนี้ คือว่า...!","เป็นชุดที่ฉันเตรียมมา เพื่องานสืบสวนลับ ของกลุ่มรักษาความสงบค่ะ...","มะ.. ไม่ใช่งานอดิเรก...! ของฉันนะคะ! จริงๆ นะคะ!"]
         }
     },
     {
@@ -140,9 +144,9 @@ const AUDIO_DETAIL = [
                 "（褒められるのは、まだ慣れません。）（嬉しくはありますが……！でも……！）"
             ],
             English: [
-                "I just put it on beforehand to check if the size was right, that's all...!",
-                "(Y-You called me cute...) (Being praised so suddenly... Uuu...!)",
-                "(I'm still not used to being complimented.) (It makes me happy, but...! But...!)"
+                "I was just checking to see if it's the right size...!",
+                "(S-Sensei said it's cute...) (If you suddenly compliment me, then... Uhh...!)",
+                "(I'm still not used to hearing compliments.) (It makes me happy...! But...!)"
             ],
             Chinese: [
             	"只是想提前确认下尺寸合不合身才试穿的……！",
@@ -150,15 +154,16 @@ const AUDIO_DETAIL = [
                 "（我还不习惯被夸呢。）（虽然确实很开心……！但是……！）"
             ],
             TraditionalChinese: [
-                "只是想提前確認下尺寸合不合身才試穿的……！",
-                "（居、居然說我可愛……）（突然被這麼誇獎……嗚……！）",
-                "（我還不習慣被誇呢。）（雖然確實很開心……！但是……！）"
+                "只是想先確認尺寸是否合適才會穿上……！",
+                "（被，被說可愛了……）（突然被誇獎的話……　唔……！）",
+                "（我還不習慣被誇獎）（雖然很高興……！　但是……！）"
             ],
             Korean: [
-                "그냥 사전에 씌워서, 크기가 맞는지 확인해봤는데...",
-                "넌 날 귀여운 사람이라고 불렀어",
-                "(나는 여전히 칭찬을 받는 것에 익숙하지 않다.) (나는 행복하지만...! 하지만...!)"
-            ]
+                "사이즈가 맞는지, 미리 확인하려는 것 뿐입니다……!",
+                "(귀, 귀엽다고 해주셨습니다……) (갑자기 칭찬하시면…… 우우……!)",
+                "(칭찬을 듣는 건 역시 아직 익숙하지 않습니다.) (기쁘지만……! 그렇지만……!)"
+            ],
+            Thai: ["ฉันแค่จะเช็กล่วงหน้า ว่าไซซ์ถูกหรือเปล่า เท่านั้นเองค่ะ...!","(คะ... คุณครูบอกว่า น่ารักด้วยค่ะ...) (ถ้าจู่ๆ จะชมกันแบบนี้... ฟู่ว...!)","(ฉันยังไม่ชินกับ การถูกชมจริงๆ ด้วยค่ะ) (ก็ดีใจอยู่หรอก...! แต่ก็...!)"]
         }
     },
     {
@@ -168,21 +173,22 @@ const AUDIO_DETAIL = [
                 "これは、機密事項……なので！"
             ],
             English: [
-                "What you saw today, please keep it a secret from everyone else, okay!",
-                "This is... classified information... so there!"
+                "What you saw today has to stay a secret!",
+                "This is...top secret!"
             ],
             Chinese: [
                 "今天您看到的事，请对其他人都保密哦！",
                 "这可是……机密事项呢！"
             ],
             TraditionalChinese: [
-                "今天您看到的事，請對其他人都保密哦！",
-                "這可是……機密事項呢！"
+                "今天看到的事，請對其他人保密哦！",
+                "因為，這是機密事項……！"
             ],
             Korean: [
-                "오늘 본 건 다른 사람들한테 비밀로 해줘요",
-                "이건 비밀 정보입니다"
-            ]
+                "오늘 보신 것, 다른 분들에게는 비밀입니다!",
+                "이건, 기밀 사항…… 이니까요!"
+            ],
+            Thai: ["ที่เห็นวันนี้ ให้เป็นความลับ กับคนอื่นนะคะ!","ก็นี่เป็นข้อมูลลับ... นี่คะ!"]
         }
     }
 ];
@@ -294,7 +300,7 @@ function playVoiceline() {
 			track.play().catch(finish);
 
 			if (dialogBox) {
-				textbox.textContent = dialog[window.selectedLanguage][index];
+				textbox.textContent = getSubtitleText(dialog, window.selectedLanguage, index);
 				textbox.style.opacity = 1;
 			}
 		},
@@ -464,6 +470,16 @@ function setMouse(event) {
 	return { x: ax - canvas.width * positionX, y: ay - canvas.height * positionY };
 }
 
+function getSubtitleText(dialog, language, index) {
+	let text = dialog?.[language]?.[index];
+	if (text == null && language === 'Thai') {
+		language = 'English';
+		text = dialog?.[language]?.[index];
+	}
+	textbox.lang = subtitleLocales[language];
+	return text ?? "";
+}
+
 function updateSubtitleLanguage() {
 	let language = subtitleLanguagePreference;
 	if (language === 'auto') {
@@ -477,6 +493,8 @@ function updateSubtitleLanguage() {
 			language = 'Japanese';
 		} else if (primary === 'ko' || primary === 'korean' || primary === 'koreana') {
 			language = 'Korean';
+		} else if (primary === 'th' || primary === 'thai') {
+			language = 'Thai';
 		} else {
 			language = 'English';
 		}
@@ -486,7 +504,7 @@ function updateSubtitleLanguage() {
 	window.selectedLanguage = language;
 	textbox.lang = subtitleLocales[language];
 	const clip = currentTracks.at(-1);
-	if (dialogBox && clip) textbox.textContent = clip.dialog[language][clip.index];
+	if (dialogBox && clip) textbox.textContent = getSubtitleText(clip.dialog, language, clip.index);
 }
 
 function init() {
